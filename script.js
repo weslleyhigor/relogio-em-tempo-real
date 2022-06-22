@@ -34,7 +34,6 @@ function relogio () {
     
 
     for ( i = indiceGmt; i <= tamManipula; i++) {
-      console.log(i);
       fusoText += manipula[i];
     }
 
