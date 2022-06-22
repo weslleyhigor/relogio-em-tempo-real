@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
+:root {
+  --primary-color: rgb(17, 86, 102);
+  --primary-color-darker: rgb(9, 48, 56);
+}
+
+* {
+  box-sizing: border-box;
+  outline: 0;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  background: var(--primary-color);
+  font-family: 'Open sans', sans-serif;
+  font-size: 1.3em;
+  line-height: 1.5em;
+}
+
+
+#hora {
+  font-size: 26px;
+  font-weight: bolder;
+}
+
+.container, #rodape {
+  text-align: center;
+  max-width: 640px;
+  margin: 50px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#rodape{
+  margin: auto;
+}
+
+#rodape p a{
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+
+#caixa-legenda{
+  display: flex;
+}
+
+.legenda{
+  margin-right: 35px;
+  line-height: 20px;
+}
+
+#nome {
+  text-decoration: none;
+}
+
+
+form input, form label, form button {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+form input {
+  font-size: 24px;
+  height: 50px;
+  padding: 0 20px;
+}
+
+form input:focus {
+  outline: 1px solid var(--primary-color);
+}
+
+form button {
+  border: none;
+  background: var(--primary-color);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  height: 50px;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+form button:hover {
+  background: var(--primary-color-darker);
+}
+
+.paragrafo-resultado, .bad {
+  background: rgb(109, 255, 182);
+  padding: 10px 20px;
+}
+
+.bad {
+  background: rgb(255, 150, 150);
+}
+
+
+@media(max-width:600px){
+  .container {
+    max-width: 600px;
+    margin: 25px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  #caixa-legenda{
+    display: flex;
+  }
+  
+  .legenda{
+    margin-right: 20px;
+    line-height: 20px;
+    font-size: 12px;
+  }
+
+  .col1{
+    width: 110px;
+  }
+
+  .col2{
+    width: 150px;
+  }
+
+  #nome {
+    text-decoration: none;
+  }
+}
