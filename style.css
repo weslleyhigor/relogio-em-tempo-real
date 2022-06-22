@@ -101,7 +101,7 @@ form button:hover {
 @media(max-width:600px){
   .container {
     max-width: 600px;
-    margin: 25px;
+    margin: 25px auto;
     background: #fff;
     padding: 20px;
     border-radius: 10px;
