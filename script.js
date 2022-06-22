@@ -15,11 +15,12 @@ function relogio () {
 
   const diaText = verificaDiaSemana(diaSemana);
   const mesText = verificaMes(mes);
-  const fusoText = manipulaFuso(fusoHorario);
+  const fusoLocal = manipulaFuso(fusoHorario);
 
   text.innerHTML = `<p>${diaText}, ${dia} de ${mesText} de ${ano}</p>`;
-  text.innerHTML += `<p id="hora">${hora}:${minutos}:${segundos}</p>`;
-  text.innerHTML += `<p>${fusoText}</p>`
+  text.innerHTML += `<h1>${hora}:${minutos}:${segundos}</h1>`;
+  text.innerHTML += `<p>${fusoLocal[0]}</p>`
+  text.innerHTML += `<p>${fusoLocal[1]}</p>`
 
   function zeroAEsquerda (valor) {
     return valor >= 10? valor : `0${valor}`;
@@ -27,19 +28,29 @@ function relogio () {
 
   // Funçao gambiarra pra mostrar o fuso horario do date
   function manipulaFuso (fusoHorario) {
-    let manipula = fusoHorario.replace(/ /g, "");
-    let indiceGmt = manipula.indexOf('G');
-    let tamManipula = manipula.length;
-    let fusoText = '';
-    
+    let manipula = fusoHorario.replace(/ /g, ""); // remove espaços entre o texto
+    let indiceGmt = manipula.indexOf('G'); // Descobre a posiçao/indice do caractere G
+    let tamManipula = manipula.length; // recebe o tamanho do texto dentro do manipula
 
-    for ( i = indiceGmt; i <= tamManipula; i++) {
+    let fusoText = '';
+    let localText ='';
+    let contador = 0
+
+    // Coleta o codigo do Fuso
+    for ( i = indiceGmt; i <= (indiceGmt + 7); i++) {
       fusoText += manipula[i];
     }
 
-      fusoText =  fusoText.replace('undefined', '');
+    contador = i;
 
-    return fusoText;
+    //Coleta a Cidade do fuso
+    for ( i = contador; i < tamManipula; i++ ) {
+        localText += manipula[i];
+    }
+    
+    const fusoLocal = [fusoText, localText];
+
+    return fusoLocal;
   }
 
   function verificaDiaSemana (diaSemana) {
