@@ -68,7 +68,7 @@ function relogio () {
       case 5:
         return diaSemanaText = 'Quinta-feira';
       case 6:
-        return diaSemanaText = 'Sexta=feira';
+        return diaSemanaText = 'Sexta-feira';
       case 7:
         return diaSemanaText = 'Sábado';
       default:
