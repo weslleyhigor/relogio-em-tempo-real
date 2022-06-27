@@ -3,9 +3,9 @@ function relogio () {
 
   const data = new Date(); // coleta infos do objeto Date
 
-  const diaSemana = data.getDay()+1; // Dia começa com zero
+  const diaSemana = data.getDay(); // Dia começa com zero
   const dia = data.getDate();
-  const mes = data.getMonth()+1; // Mes começa com zero
+  const mes = data.getMonth(); // Mes começa com zero
   const ano = data.getFullYear();
   const hora = zeroAEsquerda(data.getHours());
   const minutos = zeroAEsquerda(data.getMinutes());
@@ -54,59 +54,15 @@ function relogio () {
   }
 
   function verificaDiaSemana (diaSemana) {
-    let diaSemanaText;
-
-    switch ( diaSemana ) {
-      case 1:
-        return diaSemanaText = 'Domingo';
-      case 2:
-        return diaSemanaText = 'Segunda-feira';
-      case 3:
-        return diaSemanaText = 'Terça-feira';
-      case 4:
-        return diaSemanaText = 'Quarta-feira';
-      case 5:
-        return diaSemanaText = 'Quinta-feira';
-      case 6:
-        return diaSemanaText = 'Sexta-feira';
-      case 7:
-        return diaSemanaText = 'Sábado';
-      default:
-        return diaSemanaText = '';
-    }
+    const diaSemanaText = ['Domingo','Segunda-feira','Terça-feira','Quarta-feira','Quinta-feira','Sexta-feira','Sábado'];
+    
+    return diaSemanaText[diaSemana];
   };
 
   function verificaMes (mes) {
-    let mesText;
+    const mesText = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
 
-    switch ( mes ) {
-      case 1:
-        return mesText = 'Janeiro';
-      case 2:
-        return mesText = 'Fevereiro';
-      case 3:
-        return mesText = 'Março';
-      case 4:
-        return mesText = 'Abril';
-      case 5:
-        return mesText = 'Maio';
-      case 6:
-        return mesText = 'Junho';
-      case 7:
-        return mesText = 'Julho';
-      case 8:
-        return mesText = 'Agosto';
-      case 9:
-        return mesText = 'Setembro';
-      case 10:
-        return mesText = 'Outubro';
-      case 11:
-        return mesText = 'Novembro';
-      case 12:
-        return mesText = 'Dezembro';
-      default:
-        return mesText = '';
-    }
+    return mesText[mes];
   };
 }
 
